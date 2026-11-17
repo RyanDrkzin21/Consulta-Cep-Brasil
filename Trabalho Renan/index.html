@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guia do Brasil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/estilo.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark barra-topo">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#topo">Guia do Brasil</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+                aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#cep">Consultar CEP</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cidades">Cidades por estado</a></li>
+            <li class="nav-item"><a class="nav-link" href="#feriados">Feriados</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4" id="topo">
+
+    <div class="mb-4">
+      <h1 class="h3">Guia do Brasil</h1>
+      <p class="text-muted mb-0">Consulte um CEP, veja as cidades de cada estado e confira os feriados nacionais do ano.</p>
+    </div>
+
+    <!-- aqui aparecem os avisos de erro e de sucesso -->
+    <div id="avisos" aria-live="polite"></div>
+
+    <section id="cep" class="card mb-4">
+      <div class="card-body">
+        <h2 class="h5 card-title">Consultar CEP</h2>
+        <form id="form-cep" class="row g-2" novalidate>
+          <div class="col-12 col-sm-8">
+            <label for="campo-cep" class="visually-hidden">CEP</label>
+            <input type="text" id="campo-cep" class="form-control" placeholder="Ex.: 70040-010" inputmode="numeric" maxlength="9">
+          </div>
+          <div class="col-12 col-sm-4">
+            <button type="submit" class="btn btn-primary w-100">
+              <span id="carregando-cep" class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+              Buscar
+            </button>
+          </div>
+        </form>
+        <dl id="resultado-cep" class="row mt-3 mb-0"></dl>
+      </div>
+    </section>
+
+    <section id="cidades" class="card mb-4">
+      <div class="card-body">
+        <h2 class="h5 card-title">Cidades por estado</h2>
+        <div class="row g-2">
+          <div class="col-12 col-md-5">
+            <label for="campo-estado" class="form-label">Estado</label>
+            <select id="campo-estado" class="form-select" disabled>
+              <option value="">Carregando estados...</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-7">
+            <label for="campo-filtro" class="form-label">Filtrar cidade pelo nome</label>
+            <input type="text" id="campo-filtro" class="form-control" placeholder="Ex.: Brasília" disabled>
+          </div>
+        </div>
+
+        <div id="carregando-cidades" class="text-center my-3 d-none">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Carregando cidades...</span>
+          </div>
+        </div>
+        <p id="contagem-cidades" class="text-muted small mt-3 mb-1"></p>
+        <ul id="lista-cidades" class="list-group lista-rolavel"></ul>
+      </div>
+    </section>
+
+    <section id="feriados" class="card mb-4">
+      <div class="card-body">
+        <h2 class="h5 card-title">Feriados nacionais</h2>
+        <form id="form-feriados" class="row g-2" novalidate>
+          <div class="col-12 col-sm-8">
+            <label for="campo-ano" class="visually-hidden">Ano</label>
+            <input type="number" id="campo-ano" class="form-control" placeholder="Ano (ex.: 2026)">
+          </div>
+          <div class="col-12 col-sm-4">
+            <button type="submit" class="btn btn-primary w-100">
+              <span id="carregando-feriados" class="spinner-border spinner-border-sm d-none" aria-hidden="true"></span>
+              Ver feriados
+            </button>
+          </div>
+        </form>
+        <ul id="lista-feriados" class="list-group mt-3"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape text-white text-center py-3">
+    <small>
+      Dados de
+      <a class="link-light" href="https://viacep.com.br" target="_blank" rel="noopener">ViaCEP</a>,
+      <a class="link-light" href="https://servicodados.ibge.gov.br/api/docs" target="_blank" rel="noopener">IBGE</a> e
+      <a class="link-light" href="https://brasilapi.com.br" target="_blank" rel="noopener">BrasilAPI</a>
+    </small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

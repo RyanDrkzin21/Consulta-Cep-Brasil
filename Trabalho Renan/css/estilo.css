@@ -1,0 +1,72 @@
+/* cores da bandeira do Brasil */
+:root {
+  --verde: #009c3b;
+  --amarelo: #ffdf00;
+  --azul: #002776;
+  --bs-primary: #002776;
+  --bs-primary-rgb: 0, 39, 118;
+}
+
+body {
+  background-color: #f4f7f4;
+}
+
+.barra-topo {
+  background-color: var(--verde);
+  border-bottom: 4px solid var(--amarelo);
+}
+
+.barra-topo .navbar-brand {
+  color: var(--amarelo);
+}
+
+.barra-topo .nav-link {
+  color: #fff;
+}
+
+.barra-topo .nav-link:hover,
+.barra-topo .nav-link:focus {
+  color: var(--amarelo);
+}
+
+/* botoes azuis com texto branco */
+.btn-primary {
+  --bs-btn-bg: var(--azul);
+  --bs-btn-border-color: var(--azul);
+  --bs-btn-hover-bg: #00194d;
+  --bs-btn-hover-border-color: #00194d;
+  --bs-btn-active-bg: #00194d;
+  --bs-btn-active-border-color: #00194d;
+  --bs-btn-disabled-bg: var(--azul);
+  --bs-btn-disabled-border-color: var(--azul);
+}
+
+/* faixa amarela no topo de cada cartao e titulos em azul */
+main .card {
+  border-top: 4px solid var(--amarelo);
+}
+
+main .card-title {
+  color: var(--azul);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 0.25rem rgba(0, 156, 59, 0.25);
+}
+
+.rodape {
+  background-color: var(--azul);
+  border-top: 4px solid var(--amarelo);
+}
+
+/* a lista de cidades pode ter centenas de itens, entao ela rola dentro da caixa */
+.lista-rolavel {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.data-feriado {
+  min-width: 5.5rem;
+}
