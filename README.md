@@ -12,8 +12,8 @@ Aplicação web com três consultas sobre o Brasil: endereço por CEP, cidades d
 
 ## Links
 
-- Aplicação publicada (GitHub Pages): https://github.com/RyanDrkzin21/Consulta-Cep-Brasil
-- Repositório: https://ryandrkzin21.github.io/Consulta-Cep-Brasil/
+- Aplicação publicada (GitHub Pages): https://ryandrkzin21.github.io/Consulta-Cep-Brasil/
+- Repositório: https://github.com/RyanDrkzin21/Consulta-Cep-Brasil
 
 ## Framework CSS
 
